@@ -1,0 +1,66 @@
+@startuml
+entity Patient {
+  id : Long
+  nom : String
+  prenom : String
+  dateNaissance : Date
+  chambre_id : Long
+}
+
+entity Pathologie {
+  id : Long
+  nom : String
+  description : String
+}
+
+entity Traitement {
+  id : Long
+  nom : String
+  description : String
+  prescritPar_id : Long
+}
+
+entity Chambre {
+  id : Long
+  numero : String
+  service_id : Long
+}
+
+entity Service {
+  id : Long
+  nom : String
+}
+
+entity Personnel {
+  id : Long
+  nom : String
+  prenom : String
+  email : String
+  role : String
+}
+
+entity Medecin {
+  specialite : String
+}
+
+entity Infirmier {
+  niveau : String
+}
+
+entity Secretaire {
+  bureau : String
+}
+
+Patient "1" -- "N" Pathologie : OneToMany
+Patient "1" -- "N" Traitement : OneToMany
+Patient "1" -- "1" Chambre : OneToOne
+Pathologie "N" -- "N" Traitement : ManyToMany
+Traitement "N" -- "1" Personnel : ManyToOne
+Chambre "1" -- "N" Patient : OneToMany
+Chambre "N" -- "1" Service : ManyToOne
+Service "1" -- "N" Personnel : OneToMany
+
+Personnel <|-- Medecin : Héritage
+Personnel <|-- Infirmier : Héritage
+Personnel <|-- Secretaire : Héritage
+@enduml
