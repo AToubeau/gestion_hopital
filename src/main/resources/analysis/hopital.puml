@@ -1,66 +1,78 @@
 @startuml
 entity Patient {
   id : Long
-  nom : String
-  prenom : String
-  dateNaissance : Date
-  chambre_id : Long
+  name : String
+  firstName : String
+  birthdate : Date
 }
 
-entity Pathologie {
+entity Condition {
   id : Long
-  nom : String
+  name : String
   description : String
 }
 
-entity Traitement {
+entity Treatment {
   id : Long
-  nom : String
+  name : String
   description : String
-  prescritPar_id : Long
+  orderBy_id : Long
 }
 
-entity Chambre {
+entity Room {
   id : Long
-  numero : String
-  service_id : Long
+  number : String
 }
 
 entity Service {
   id : Long
-  nom : String
+  name : String
 }
 
-entity Personnel {
+entity Appointment {
   id : Long
-  nom : String
-  prenom : String
+  startHour : DateTime
+  status : String
+}
+
+entity Employee {
+  id : Long
+  name : String
+  firstName : String
   email : String
   role : String
 }
 
-entity Medecin {
-  specialite : String
+entity Doctor {
+  speciality : String
+  Accès complet aux dossiers
+  Prescription de traitements
 }
 
-entity Infirmier {
-  niveau : String
+entity Nurse {
+  level : String
+  Accès en lecture aux dossiers
+  Administration des traitements
 }
 
-entity Secretaire {
-  bureau : String
+entity Secretary {
+  office : String
+  Accès administratif
+  Gestion des rendez-vous
 }
 
-Patient "1" -- "N" Pathologie : OneToMany
-Patient "1" -- "N" Traitement : OneToMany
-Patient "1" -- "1" Chambre : OneToOne
-Pathologie "N" -- "N" Traitement : ManyToMany
-Traitement "N" -- "1" Personnel : ManyToOne
-Chambre "1" -- "N" Patient : OneToMany
-Chambre "N" -- "1" Service : ManyToOne
-Service "1" -- "N" Personnel : OneToMany
+Patient "1" -- "1" Room : OneToOne
+Patient "1" -- "N" Condition : OneToMany
+Patient "1" -- "N" Treatment : OneToMany
+Condition "N" -- "N" Treatment : ManyToMany
+Treatment "N" -- "1" Employee : ManyToOne
+Room "N" -- "1" Service : ManyToOne
+Service "1" -- "N" Employee : OneToMany
 
-Personnel <|-- Medecin : Héritage
-Personnel <|-- Infirmier : Héritage
-Personnel <|-- Secretaire : Héritage
+Employee <|-- Doctor : Héritage
+Employee <|-- Nurse : Héritage
+Employee <|-- Secretary : Héritage
+
+Appointment "N" -- "1" Patient : ManyToOne
+Appointment "N" -- "1" Doctor : ManyToOne
 @enduml
