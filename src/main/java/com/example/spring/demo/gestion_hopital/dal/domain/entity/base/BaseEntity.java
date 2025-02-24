@@ -28,4 +28,8 @@ public class BaseEntity <T extends Serializable> {
     @UpdateTimestamp
     @Setter
     private LocalDateTime updatedAt;
+
+    public T getId() {
+        return id;
+    }
 }
