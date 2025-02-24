@@ -32,10 +32,10 @@ public class TreatmentController {
         return ResponseEntity.ok(treatmentService.findall().stream().map(TreatmentDTO::fromEntity).toList());
     }
 
-    @GetMapping("/personnel/{personnelId}")
+    /*@GetMapping("/personnel/{personnelId}")
     public ResponseEntity<List<TreatmentDTO>> prescribedByList(@PathVariable Long personnelId){
 
-    }
+    }*/
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody TreatmentForm treatmentForm){
