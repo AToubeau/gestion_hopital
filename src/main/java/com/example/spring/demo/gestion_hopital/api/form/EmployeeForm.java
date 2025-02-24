@@ -14,6 +14,7 @@ public record EmployeeForm(
         String email,
 
         @NotEmpty(message = "Le rôle du personnel doit absolument être spécifié")
-        String role,
-) {
+        String role
+)
+{
 }
