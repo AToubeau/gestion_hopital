@@ -20,7 +20,7 @@ public class Treatment extends BaseEntity<Long> {
     @Column(name = "Description", nullable = false)
     private String description;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "PrescribedBy_id", nullable = false)
-    private Personnel personnel;
+    private Personnel personnel;*/
 }

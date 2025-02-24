@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/gestion_hospital
     username: postgres
-    password: Dg3HIJ50__
+    password: judo4Life
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

@@ -9,7 +9,7 @@ public interface TreatmentService {
     Long create(Treatment treatment);
     Treatment findbyId(Long id);
     List<Treatment> findall();
-    Optional<Treatment> PrescribedByList(Long personnelId);
+    //Optional<Treatment> PrescribedByList(Long personnelId);
     void delete(Long id);
     void update(Long id, Treatment treatment);
 }

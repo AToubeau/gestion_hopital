@@ -18,7 +18,7 @@ public class TreatmentController {
 
     @PostMapping
     public ResponseEntity<Long> create(@RequestBody TreatmentForm treatmentForm){
-        Treatment treatment = treatmentForm.toEntity(treatmentForm.personnel());
+        Treatment treatment = treatmentForm.toEntity();
         return ResponseEntity.ok(treatmentService.create(treatment));
     }
 
@@ -37,12 +37,12 @@ public class TreatmentController {
 
     }*/
 
-    @PutMapping("/{id}")
+    /*@PutMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody TreatmentForm treatmentForm){
         Treatment updateTreatment = treatmentForm.toEntity(treatmentForm.personnel());
         treatmentService.update(id, updateTreatment);
         return ResponseEntity.noContent().build();
-    }
+    }*/
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){

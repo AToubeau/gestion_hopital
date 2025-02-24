@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface TreatmentRepository extends JpaRepository<Treatment, Long> {
-    @Query( "Select u from Treatment u where u.personnel.id ilike :personnelId")
-    Optional<Treatment> PrescribedByList(Long personnelId);
+   /* @Query( "Select u from Treatment u where u.personnel.id ilike :personnelId")
+    Optional<Treatment> PrescribedByList(Long personnelId);*/
 }

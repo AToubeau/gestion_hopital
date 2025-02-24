@@ -30,10 +30,10 @@ public class TreatmentServiceImpl implements TreatmentService {
         return treatmentRepository.findAll();
     }
 
-    @Override
+   /* @Override
     public Optional<Treatment> PrescribedByList(Long personnelId) {
         return treatmentRepository.PrescribedByList(personnelId);
-    }
+    }*/
 
     @Override
     public void delete(Long id) {
@@ -47,7 +47,7 @@ public class TreatmentServiceImpl implements TreatmentService {
         Treatment updateTreatment = findbyId(id);
         updateTreatment.setName(treatment.getName());
         updateTreatment.setDescription(treatment.getDescription());
-        updateTreatment.setPersonnel(treatment.getPersonnel());
+        //updateTreatment.setPersonnel(treatment.getPersonnel());
         treatmentRepository.save(updateTreatment);
     }
 }
