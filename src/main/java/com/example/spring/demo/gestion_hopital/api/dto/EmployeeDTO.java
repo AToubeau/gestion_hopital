@@ -1,4 +1,22 @@
 package com.example.spring.demo.gestion_hopital.api.dto;
 
-public record EmployeeDTO() {
+import com.example.spring.demo.gestion_hopital.dal.domain.Employee;
+
+public record EmployeeDTO(
+    Long id,
+    String name,
+    String firstname,
+    String email,
+    String role
+    ) {
+    public static EmployeeDTO fromEntity(Employee employee) {
+        return new EmployeeDTO(
+                employee.getId(),
+                employee.getName(),
+                employee.getFirstName(),
+                employee.getEmail(),
+                employee.getRole(),
+
+        );
+    }
 }

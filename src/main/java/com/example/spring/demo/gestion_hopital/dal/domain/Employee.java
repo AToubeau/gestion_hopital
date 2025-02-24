@@ -27,3 +27,4 @@ public abstract class Employee extends BaseEntity {
     @Column
     private String role;
 }
+

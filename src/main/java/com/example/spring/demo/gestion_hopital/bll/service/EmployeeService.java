@@ -12,10 +12,11 @@ public interface EmployeeService {
 
     Long create(Employee employee);
     Employee findById(Long id);
-    List<Employee> findall();
+    List<Employee> findAll();
     void delete(Long id);
     void update(Long id, Employee employee);
-    List<Employee> findByRole(String role);/* @PostMapping
+    List<Employee> findByRole(String role);
+    /* @PostMapping
     public ResponseEntity<Long> create(@RequestBody @Valid EmployeeForm form) {
     }
 
