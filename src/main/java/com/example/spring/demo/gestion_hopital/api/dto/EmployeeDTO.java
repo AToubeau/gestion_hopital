@@ -15,7 +15,7 @@ public record EmployeeDTO(
                 employee.getName(),
                 employee.getFirstName(),
                 employee.getEmail(),
-                employee.getRole(),
+                employee.getRole()
 
         );
     }
