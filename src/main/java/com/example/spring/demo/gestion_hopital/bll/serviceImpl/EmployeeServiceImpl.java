@@ -1,5 +1,6 @@
 package com.example.spring.demo.gestion_hopital.bll.serviceImpl;
 
+import com.example.spring.demo.gestion_hopital.bll.exception.ressourceNotFound.RessourceNotFoundException;
 import com.example.spring.demo.gestion_hopital.bll.service.EmployeeService;
 import com.example.spring.demo.gestion_hopital.dal.domain.entity.Employee;
 import com.example.spring.demo.gestion_hopital.dal.repository.EmployeeRepository;
@@ -21,7 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee findById(Long id) {
-        return employeeRepository.findById(id).orElseThrow();
+        return employeeRepository.findById(id).orElseThrow(() -> new RessourceNotFoundException("Employee not found"));
     }
 
     @Override
