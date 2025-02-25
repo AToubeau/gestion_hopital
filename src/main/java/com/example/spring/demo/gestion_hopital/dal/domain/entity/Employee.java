@@ -1,4 +1,4 @@
-package com.example.spring.demo.gestion_hopital.dal.domain;
+package com.example.spring.demo.gestion_hopital.dal.domain.entity;
 
 import com.example.spring.demo.gestion_hopital.dal.domain.entity.base.BaseEntity;
 import jakarta.persistence.*;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor @NoArgsConstructor
 @Table(name = "employee")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Employee extends BaseEntity {
+public class Employee extends BaseEntity<Long> {
 
     @Column
     private String name;

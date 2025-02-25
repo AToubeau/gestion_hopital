@@ -2,8 +2,7 @@ package com.example.spring.demo.gestion_hopital.api.controller;
 
 import com.example.spring.demo.gestion_hopital.api.dto.EmployeeDTO;
 import com.example.spring.demo.gestion_hopital.bll.service.EmployeeService;
-import com.example.spring.demo.gestion_hopital.dal.domain.Employee;
-import com.example.spring.demo.gestion_hopital.dal.repository.EmployeeRepository;
+import com.example.spring.demo.gestion_hopital.dal.domain.entity.Employee;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

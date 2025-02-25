@@ -1,4 +1,4 @@
-package com.example.spring.demo.gestion_hopital.dal.domain;
+package com.example.spring.demo.gestion_hopital.dal.domain.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

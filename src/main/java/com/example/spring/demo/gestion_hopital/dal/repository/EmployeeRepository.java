@@ -1,6 +1,6 @@
 package com.example.spring.demo.gestion_hopital.dal.repository;
 
-import com.example.spring.demo.gestion_hopital.dal.domain.Employee;
+import com.example.spring.demo.gestion_hopital.dal.domain.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

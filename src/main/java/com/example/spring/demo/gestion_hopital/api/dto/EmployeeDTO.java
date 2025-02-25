@@ -1,6 +1,6 @@
 package com.example.spring.demo.gestion_hopital.api.dto;
 
-import com.example.spring.demo.gestion_hopital.dal.domain.Employee;
+import com.example.spring.demo.gestion_hopital.dal.domain.entity.Employee;
 
 public record EmployeeDTO(
     Long id,
