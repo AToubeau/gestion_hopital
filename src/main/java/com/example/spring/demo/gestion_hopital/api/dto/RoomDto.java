@@ -5,9 +5,16 @@ import com.example.spring.demo.gestion_hopital.dal.domain.entity.Room;
 
 public record RoomDto(
         Long id,
-        String name
+        String name,
+        Long departmentId,
+        String departmentName
 ) {
     public static RoomDto fromEntity(Room room){
-        return new RoomDto(room.getId(), room.getName());
+        return new RoomDto(
+                room.getId(),
+                room.getName(),
+                room.getDepartment().getId(),
+                room.getDepartment().getName()
+                );
     }
 }
