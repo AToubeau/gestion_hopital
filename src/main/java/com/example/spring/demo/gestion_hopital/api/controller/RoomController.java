@@ -22,9 +22,8 @@ public class RoomController {
     private final RoomService roomService;
 
     @PostMapping("/createroom")
-    public ResponseEntity<Void> create(@RequestBody @Valid RoomForm form){
-        roomService.create(form.toEntity());
-        return ResponseEntity.ok().build(); // HTTP CODE 200 OK
+    public ResponseEntity<RoomDto> create(@RequestBody @Valid RoomForm form){
+        return ResponseEntity.ok(RoomDto.fromEntity(roomService.create(form)));
     }
 
     @GetMapping("/getAll")
