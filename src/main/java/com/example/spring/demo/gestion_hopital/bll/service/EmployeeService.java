@@ -14,10 +14,4 @@ public interface EmployeeService {
     void delete(Long id);
     void update(Long id, Employee employee);
     List<Employee> findByRole(Role role);
-    /* @PostMapping
-    public ResponseEntity<Long> create(@RequestBody @Valid EmployeeForm form) {
-    }
-
-    public List<Employee> findByRole(String role) {
-        return EmployeeRepository.findByRole(role);*/
 }
