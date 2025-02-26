@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface AppointmentService {
     Appointment createAppointment(LocalDateTime startDateTime);
     Optional<Appointment> getAppointmentById(Long id);
-   Appointment updateAppointment(Long id, Appointment appointment);
+    Appointment updateAppointment(Long id, Appointment appointment);
     void deleteAppointment(Long id);
     List<Appointment> getAllAppointments();
 }
