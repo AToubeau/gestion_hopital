@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor @NoArgsConstructor
 @Table(name = "employee")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Employee extends BaseEntity<Long> {
+public abstract class Employee extends BaseEntity<Long> {
 
     @Column
     private String name;

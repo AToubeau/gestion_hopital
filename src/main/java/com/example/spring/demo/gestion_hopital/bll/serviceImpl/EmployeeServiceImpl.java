@@ -1,9 +1,9 @@
 package com.example.spring.demo.gestion_hopital.bll.serviceImpl;
 
+import com.example.spring.demo.gestion_hopital.api.form.EmployeeForm;
 import com.example.spring.demo.gestion_hopital.bll.exception.ressourceNotFound.RessourceNotFoundException;
 import com.example.spring.demo.gestion_hopital.bll.service.EmployeeService;
-import com.example.spring.demo.gestion_hopital.dal.domain.entity.Employee;
-import com.example.spring.demo.gestion_hopital.dal.domain.entity.Role;
+import com.example.spring.demo.gestion_hopital.dal.domain.entity.*;
 import com.example.spring.demo.gestion_hopital.dal.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,8 +16,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     @Override
-    public Long create(Employee employee) {
-
+    public Long create(EmployeeForm employeeForm) {
+        Employee employee = employeeForm.toEntity();
         return employeeRepository.save(employee).getId();
     }
 

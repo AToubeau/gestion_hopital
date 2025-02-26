@@ -14,22 +14,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/employe")
+@RequestMapping("api/employee")
 @RequiredArgsConstructor
-
 public class EmployeeController {
     private final EmployeeService employeeService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Long>create(@RequestBody @Valid EmployeeForm form) {
-        return ResponseEntity.ok(employeeService.create(form.toEntity()));
+        return ResponseEntity.ok(employeeService.create(form));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<EmployeeDTO> getById(@PathVariable Long id) {
         return ResponseEntity.ok(EmployeeDTO.fromEntity(employeeService.findById(id)));
     }
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<EmployeeDTO>>getAll(){
         return ResponseEntity.ok(
                 employeeService.findAll().stream()

@@ -13,7 +13,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table
-
 public class Doctor extends Employee {
 
     @Column
