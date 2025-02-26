@@ -3,6 +3,7 @@ package com.example.spring.demo.gestion_hopital.bll.serviceImpl;
 import com.example.spring.demo.gestion_hopital.bll.exception.ressourceNotFound.RessourceNotFoundException;
 import com.example.spring.demo.gestion_hopital.bll.service.EmployeeService;
 import com.example.spring.demo.gestion_hopital.dal.domain.entity.Employee;
+import com.example.spring.demo.gestion_hopital.dal.domain.entity.Role;
 import com.example.spring.demo.gestion_hopital.dal.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.deleteById(id);
     }
     @Override
-    public List<Employee> findByRole(String role){
+    public List<Employee> findByRole(Role role){
         return employeeRepository.findByRole(role);
     }
 }

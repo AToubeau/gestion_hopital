@@ -1,6 +1,7 @@
 package com.example.spring.demo.gestion_hopital.bll.service;
 
 import com.example.spring.demo.gestion_hopital.dal.domain.entity.Employee;
+import com.example.spring.demo.gestion_hopital.dal.domain.entity.Role;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public interface EmployeeService {
     List<Employee> findAll();
     void delete(Long id);
     void update(Long id, Employee employee);
-    List<Employee> findByRole(String role);
+    List<Employee> findByRole(Role role);
     /* @PostMapping
     public ResponseEntity<Long> create(@RequestBody @Valid EmployeeForm form) {
     }

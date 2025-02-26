@@ -24,7 +24,7 @@ public class Employee extends BaseEntity<Long> {
     @Column
     private String email;
 
-    @Column
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
 
