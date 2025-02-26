@@ -18,7 +18,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department create(Department department) {
-        if (departmentRepository.existsById(department.getId())) {
+        if (departmentRepository.existsByName((department.getName()))) {
             throw new AlreadyExistException("Department already exists");
         }
         return departmentRepository.save(department);
