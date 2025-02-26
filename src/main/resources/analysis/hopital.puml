@@ -24,7 +24,7 @@ entity Room {
   number : String
 }
 
-entity Service {
+entity Department {
   id : Long
   name : String
 }
