@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "patient")
@@ -26,6 +27,9 @@ public class Patient extends BaseEntity<Long> {
     @OneToOne
     @JoinColumn(name = "room_id",nullable = false)
     private Room room;
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    private List<Treatment> treatments;
 
     public Patient(String name, String firstName, Date birthdate, Room room) {
         this.name = name;

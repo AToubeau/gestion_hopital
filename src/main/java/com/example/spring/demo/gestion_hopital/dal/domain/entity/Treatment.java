@@ -23,4 +23,8 @@ public class Treatment extends BaseEntity<Long> {
     /*@ManyToOne
     @JoinColumn(name = "PrescribedBy_id", nullable = false)
     private Personnel personnel;*/
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id", nullable = false)
+    private Patient patient;
 }
