@@ -1,5 +1,6 @@
 package com.example.spring.demo.gestion_hopital.bll.serviceImpl;
 
+import com.example.spring.demo.gestion_hopital.bll.exception.ressourceNotFound.RessourceNotFoundException;
 import com.example.spring.demo.gestion_hopital.bll.service.PatientService;
 import com.example.spring.demo.gestion_hopital.bll.service.RoomService;
 import com.example.spring.demo.gestion_hopital.dal.domain.entity.Patient;
@@ -18,12 +19,13 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Long create(Room room) {
-        return 0L;
+
+        return roomRepository.save(room).getId();
     }
 
     @Override
     public Room findById(Long id) {
-        return null;
+        return roomRepository.findById(id).orElseThrow(() -> new RessourceNotFoundException("Room not found"));
     }
 
     @Override

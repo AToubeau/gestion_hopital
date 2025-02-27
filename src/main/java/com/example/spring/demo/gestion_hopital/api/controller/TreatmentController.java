@@ -18,8 +18,8 @@ public class TreatmentController {
 
     @PostMapping
     public ResponseEntity<Long> create(@RequestBody TreatmentForm treatmentForm){
-        Treatment treatment = treatmentForm.toEntity();
-        return ResponseEntity.ok(treatmentService.create(treatment));
+        //Treatment treatment = treatmentForm.toEntity();
+        return ResponseEntity.ok(treatmentService.create(treatmentForm));
     }
 
     @GetMapping("/{id}")
